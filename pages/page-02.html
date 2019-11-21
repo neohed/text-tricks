@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    p {
+      text-align: left;
+      font-size: 2em;
+      color: #2A2922;
+      padding-left: 18px;
+    }
+
+    .longhand {
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-color: #506D2F;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 10px;
+    }
+
+    .under-and-over {
+      text-decoration-line: underline overline;
+      text-decoration-style: solid;
+      text-decoration-color: #506D2F;
+      text-decoration-thickness: 0.2rem;
+    }
+
+    .shorthand {
+      text-decoration: underline solid #506D2F 1px;
+    }
+
+    .larger {
+      font-size: 4em;
+    }
+
+    .c {
+      font-family: cursive;
+    }
+
+    .z {
+      padding-left: 146px;
+    }
+  </style>
+</head>
+<body>
+<p class="longhand larger c">sub get_file_meta {</p>
+<p class="under-and-over z">my ($file_name) = @_;</p>
+<br/>
+<p class="longhand larger c">my $root = HTML::TreeBuilder->new;</p>
+<p class="under-and-over z">$root->parse_file($file_name);</p>
+<br/>
+<p class="longhand larger c">my $title_element = $root->look_down(_tag => 'title');</p>
+<p class="under-and-over z">my $title = defined $title_element</p>
+<p class="shorthand z">? $title_element->as_text</p>
+<p class="longhand larger c z">: 'N/A';</p>
+<p class="under-and-over"></p>
+<p class="shorthand">my $p_element = $root->look_down(_tag => 'p');</p>
+<p class="longhand larger c">my $description = defined $p_element</p>
+<p class="under-and-over z">? $p_element->as_text</p>
+<p class="shorthand z">: ( defined $title_element</p>
+<p class="longhand larger c z"> ? $title</p>
+<p class="under-and-over z">: 'N/A'</p>
+<p class="shorthand z">);</p>
+<p class="longhand larger c"></p>
+<p class="under-and-over z">$root->delete;</p>
+<br/>
+<p class="longhand larger c">return ($title, $description);</p>
+<p class="under-and-over z">}</p>
+</body>
+</html>
