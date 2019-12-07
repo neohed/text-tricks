@@ -13,7 +13,7 @@
       padding-left: 18px;
     }
 
-    .longhand {
+    .agglomeration {
       text-decoration-line: underline;
       text-decoration-style: solid;
       text-decoration-color: #506D2F;
@@ -36,38 +36,53 @@
       font-size: 4em;
     }
 
-    .c {
+    .longhand {
       font-family: cursive;
     }
 
     .z {
       padding-left: 146px;
     }
+
+    .droopy {
+      text-underline-offset: 24px;
+    }
+
+    .skippy {
+      text-decoration-skip-ink: none;
+      text-underline-offset: 2px;
+    }
+
+    .in-rails {
+      text-decoration-line: underline overline;
+      text-underline-offset: -2px;
+      text-decoration-skip-ink: none;
+    }
   </style>
 </head>
 <body>
-<p class="longhand larger c">sub get_file_meta {</p>
+<p class="agglomeration larger longhand">sub get_file_meta {</p>
 <p class="under-and-over z">my ($file_name) = @_;</p>
 <br/>
-<p class="longhand larger c">my $root = HTML::TreeBuilder->new;</p>
-<p class="under-and-over z">$root->parse_file($file_name);</p>
 <br/>
-<p class="longhand larger c">my $title_element = $root->look_down(_tag => 'title');</p>
+<p class="under-and-over z">$root->parse_file($file_name);</p>
 <p class="under-and-over z">my $title = defined $title_element</p>
-<p class="shorthand z">? $title_element->as_text</p>
-<p class="longhand larger c z">: 'N/A';</p>
-<p class="under-and-over"></p>
+<p class="agglomeration larger longhand">my $title_element = $root->look_down(_tag => 'title');</p>
+<p class="agglomeration larger longhand droopy">my $root = HTML::TreeBuilder->new;</p>
+<p class="agglomeration larger longhand skippy">my $description = defined $p_element</p>
 <p class="shorthand">my $p_element = $root->look_down(_tag => 'p');</p>
-<p class="longhand larger c">my $description = defined $p_element</p>
+<p class="agglomeration larger longhand z in-rails">: 'N/A';</p>
+<p class="agglomeration larger longhand z"> ? $title</p>
+<p class="under-and-over"></p>
+<p class="shorthand z">? $title_element->as_text</p>
 <p class="under-and-over z">? $p_element->as_text</p>
 <p class="shorthand z">: ( defined $title_element</p>
-<p class="longhand larger c z"> ? $title</p>
 <p class="under-and-over z">: 'N/A'</p>
 <p class="shorthand z">);</p>
-<p class="longhand larger c"></p>
+<p class="agglomeration larger longhand"></p>
 <p class="under-and-over z">$root->delete;</p>
 <br/>
-<p class="longhand larger c">return ($title, $description);</p>
+<p class="agglomeration larger longhand">return ($title, $description);</p>
 <p class="under-and-over z">}</p>
 </body>
 </html>

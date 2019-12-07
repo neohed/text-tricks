@@ -10,38 +10,55 @@
     p {
       font-family: 'Rubik Mono One', sans-serif;
       text-decoration: underline wavy darkorange;
-      text-underline-offset: 1em;
       font-size: 2em;
       color: #020509;
     }
 
-    .two-lines {
+    .brown-paper {
       text-decoration-color: rebeccapurple;
       text-decoration-line: underline overline;
+      text-decoration-thickness: 12px;
+      text-underline-offset: 12px;
     }
 
-    .larger {
+    .packages {
       font-size: 4em;
+    }
+
+    .tied-up {
+      text-underline-offset: -8px;
+      text-decoration: underline darkorange;
+      text-decoration-thickness: 8px;
+    }
+
+    .with {
+      text-decoration-skip-ink: none;
+    }
+
+    .string {
+      text-underline-offset: -20px;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: 28px;
     }
   </style>
 </head>
 <body>
 <p class="">ARCTRIG		DLOAD	ABS		# PUSHDOWN  16D-21D</p>
 <br>
-<p class="two-lines">SINTH</p>
-<p class="larger">DSU	BMN</p>
+<p class="brown-paper">SINTH</p>
+<p class="packages tied-up string">DSU	BMO</p>
 <br>
-<p class="two-lines larger">QTSN45		# ABS(SIN/4) - SIN(45)/4</p>
+<p class="brown-paper packages">QTSN45		# ABS(SIN/4) - SIN(45)/4</p>
 <br>
-<p class="larger">TRIG1		# IF (-45,45) OR (135,-135)</p>
-<p class="larger">DLOAD	SL1		# (45,135) OR (-135,-45)</p>
+<p class="packages tied-up">TRIG1		# IF (-45,45) OR (135,-135)</p>
+<p class="packages tied-up with">DLOAD	SL1		# (45,135) OR (-135,-45)</p>
 <br>
-<p class="larger">COSTH</p>
+<p class="packages">COSTH</p>
 <br>
-<p class="two-lines larger">ACOS	SIGN</p>
-<p class="larger">SINTH</p>
+<p class="brown-paper packages">ACOS	SIGN</p>
+<p class="packages">SINTH</p>
 <br>
-<p class="larger">STORE	THETA		# X = ARCCOS(COS) WITH SIGN(SIN)</p>
-<p class="larger">RVQ</p>
+<p class="packages">STORE	THETA		# X = ARCCOS(COS) WITH SIGN(SIN)</p>
+<p class="packages">RVQ</p>
 </body>
 </html>
