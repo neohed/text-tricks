@@ -1,4 +1,8 @@
-# Resources
+# text-tricks
+
+Demos of the new text decoration CSS attributes for underline thickness, skip-ink and height.
+
+## Resources
 
 * https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness
 * https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset
